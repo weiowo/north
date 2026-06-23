@@ -5,15 +5,15 @@ export default function PackingTab() {
 
   return (
     <div>
-      <div className="text-[18px] font-[560] mb-2.5" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+      <div className="text-[18px] font-[560] mb-2.5">
         打包清單
       </div>
-      <div className="text-[12.5px] text-mist mb-4">共 {PACKING.length} 項</div>
+      <div className="text-[14px] text-mist mb-4">共 {PACKING.length} 項</div>
 
       {categories.map((cat) => (
         <div key={cat} className="mb-4">
           <div
-            className="text-[11px] tracking-[0.08em] uppercase mb-2 px-1"
+            className="text-[14px] tracking-[0.08em] uppercase mb-2 px-1"
             style={{ color: '#2DE2E6' }}
           >
             {cat}

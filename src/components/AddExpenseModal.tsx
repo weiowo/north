@@ -2,9 +2,27 @@
 
 import { useState } from 'react'
 import { supabase } from '@/lib/supabase'
-import { TRIP } from '@/lib/data'
+import { TRIP, tripDayCount } from '@/lib/data'
 
-const CURRENCIES = ['NOK', 'SEK', 'DKK', 'EUR', 'GBP', 'USD', 'TWD']
+const CURRENCIES: { code: string; label: string }[] = [
+  { code: 'NOK', label: 'NOK（挪威）' },
+  { code: 'SEK', label: 'SEK（瑞典）' },
+  { code: 'DKK', label: 'DKK（丹麥）' },
+  { code: 'EUR', label: 'EUR（歐元區）' },
+  { code: 'GBP', label: 'GBP（英國）' },
+  { code: 'USD', label: 'USD（美國）' },
+  { code: 'TWD', label: 'TWD（台灣）' },
+]
+
+function dayLabel(dayNum: number): string {
+  const d = new Date(TRIP.start)
+  d.setDate(d.getDate() + dayNum - 1)
+  const month = d.getMonth() + 1
+  const date = d.getDate()
+  const weekdays = ['日', '一', '二', '三', '四', '五', '六']
+  const weekday = weekdays[d.getDay()]
+  return `第 ${dayNum} 天 · ${month}/${date}（${weekday}）`
+}
 const TRIP_ID = 'nordic-2026'
 
 interface Props {
@@ -56,7 +74,7 @@ export default function AddExpenseModal({ onClose, onAdded }: Props) {
         }}
       >
         <div className="flex justify-between items-center mb-4">
-          <div className="text-[18px] font-[680]" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+          <div className="text-[18px] font-[680]">
             記一筆花費
           </div>
           <button onClick={onClose} className="text-[20px] text-mist cursor-pointer bg-none border-none">✕</button>
@@ -91,7 +109,7 @@ export default function AddExpenseModal({ onClose, onAdded }: Props) {
               value={currency}
               onChange={(e) => setCurrency(e.target.value)}
             >
-              {CURRENCIES.map((c) => <option key={c}>{c}</option>)}
+              {CURRENCIES.map((c) => <option key={c.code} value={c.code}>{c.label}</option>)}
             </select>
           </Field>
         </div>
@@ -109,20 +127,21 @@ export default function AddExpenseModal({ onClose, onAdded }: Props) {
             </select>
           </Field>
           <Field label="第幾天（選填）" className="flex-1">
-            <input
-              type="number"
-              min="1"
-              max="13"
+            <select
               className="w-full px-3 py-2.5 rounded-[10px] text-[14px] border bg-bg-elev-2 text-ink focus:outline-none focus:border-neon-cyan"
               style={{ borderColor: 'rgba(255,255,255,0.10)' }}
-              placeholder="1–13"
               value={day}
               onChange={(e) => setDay(e.target.value)}
-            />
+            >
+              <option value="">—</option>
+              {Array.from({ length: tripDayCount() }, (_, i) => i + 1).map((n) => (
+                <option key={n} value={n}>{dayLabel(n)}</option>
+              ))}
+            </select>
           </Field>
         </div>
 
-        {error && <p className="text-[12.5px] text-danger mb-3">{error}</p>}
+        {error && <p className="text-[14px] text-danger mb-3">{error}</p>}
 
         <button
           onClick={handleSave}
@@ -144,7 +163,7 @@ export default function AddExpenseModal({ onClose, onAdded }: Props) {
 function Field({ label, children, className }: { label: string; children: React.ReactNode; className?: string }) {
   return (
     <div className={`mb-3 ${className ?? ''}`}>
-      <label className="block text-[11.5px] text-mist mb-1.5 tracking-[0.03em]">{label}</label>
+      <label className="block text-[14px] text-mist mb-1.5 tracking-[0.03em]">{label}</label>
       {children}
     </div>
   )

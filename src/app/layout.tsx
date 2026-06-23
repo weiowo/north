@@ -14,7 +14,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: '北歐行 · 家庭旅程',
+  title: '北歐冒險之旅',
   description: '北歐家庭旅行行程、清單與花費記錄',
 }
 
@@ -30,7 +30,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="zh-Hant"
       className={`${inter.variable} ${fraunces.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="bg-bg text-ink min-h-screen" style={{ fontFamily: 'var(--font-inter), system-ui, sans-serif' }}>
+      <body className="bg-bg text-ink min-h-screen" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
         {children}
       </body>
     </html>

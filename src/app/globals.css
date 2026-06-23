@@ -54,11 +54,34 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* day-scroll hide scrollbar */
+/* day-scroll */
 .day-scroll {
   overflow-x: auto;
   scrollbar-width: none;
 }
 .day-scroll::-webkit-scrollbar {
   display: none;
+}
+@media (min-width: 600px) {
+  .transit-indicator {
+    justify-content: flex-start !important;
+    padding-left: 26px !important;
+  }
+  .day-scroll {
+    overflow-x: scroll !important;
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(45,226,230,0.4) rgba(255,255,255,0.06) !important;
+  }
+  .day-scroll::-webkit-scrollbar {
+    display: block !important;
+    height: 5px;
+  }
+  .day-scroll::-webkit-scrollbar-track {
+    background: rgba(255,255,255,0.06);
+    border-radius: 4px;
+  }
+  .day-scroll::-webkit-scrollbar-thumb {
+    background: rgba(45,226,230,0.4);
+    border-radius: 4px;
+  }
 }

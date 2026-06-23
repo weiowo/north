@@ -1,6 +1,19 @@
 'use client'
 
 import { ITINERARY, STAYS, DRIVE_SUMMARY, dayDate, tripDayCount } from '@/lib/data'
+import type { TransitMode } from '@/lib/types'
+
+const TRANSIT_EMOJI: Record<TransitMode, string> = {
+  walk:    '🚶',
+  metro:   '🚇',
+  car:     '🚗',
+  bus:     '🚌',
+  taxi:    '🚕',
+  ferry:   '⛴️',
+  train:   '🚆',
+  flight:  '✈️',
+  shuttle: '🚌',
+}
 
 interface Props {
   activeDay: number
@@ -14,13 +27,13 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
   const stay = STAYS[activeDay]
 
   return (
-    <div>
-      <div className="text-[18px] font-[560] mb-2.5 flex items-center gap-2" style={{ fontFamily: 'var(--font-fraunces), serif' }}>
+    <div className="w-full" style={{ overflow: 'hidden' }}>
+      <div className="text-[18px] font-[560] mb-2.5 flex items-center gap-2">
         行程時間軸
       </div>
 
       {/* day chips */}
-      <div className="day-scroll flex gap-2 pb-2.5 px-0.5">
+      <div className="day-scroll flex gap-2 pb-3 px-0.5" style={{ overflowX: 'auto', width: '100%' }}>
         {Array.from({ length: total }, (_, idx) => {
           const day = idx + 1
           const isActive = day === activeDay
@@ -38,14 +51,14 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
               }}
             >
               <div
-                className="text-[10px] tracking-[0.08em] uppercase"
+                className="text-[14px] tracking-[0.08em] uppercase"
                 style={{ color: isActive ? '#2DE2E6' : '#728099' }}
               >
                 {dayDate(day)}
               </div>
               <div
-                className="text-[18px] font-[680] leading-tight"
-                style={{ fontFamily: 'var(--font-fraunces), serif', color: isActive ? '#fff' : '#EAF4FF' }}
+                className="text-[14px] font-[680] leading-tight"
+                style={{ color: isActive ? '#fff' : '#EAF4FF' }}
               >
                 D{day}
               </div>
@@ -57,9 +70,8 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
       {/* drive badge */}
       {drive && (
         <div
-          className="inline-flex items-center gap-1.5 text-[12px] px-3 py-1.5 rounded-full border mb-3"
+          className="inline-flex items-center gap-1.5 text-[14px] px-3 py-1.5 rounded-full border mb-3"
           style={{
-            fontFamily: 'var(--font-jetbrains), monospace',
             color: '#FFC857',
             background: 'rgba(255,200,87,0.08)',
             borderColor: 'rgba(255,200,87,0.25)',
@@ -88,7 +100,14 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
           />
 
           {items.map((it) => (
-            <div key={it.id} className="relative mb-3.5">
+            <div key={it.id}>
+              {it.transit && (
+                <div className="transit-indicator flex justify-center items-center gap-2 mb-2 -mt-1">
+                  <span className="text-base leading-none">{TRANSIT_EMOJI[it.transit.mode]}</span>
+                  <span className="text-[14px]" style={{ color: '#8FA3BE' }}>{it.transit.label}</span>
+                </div>
+              )}
+            <div className="relative mb-3.5">
               {/* dot */}
               <div
                 className="absolute w-[10px] h-[10px] rounded-full"
@@ -108,15 +127,15 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
               >
                 {it.time && (
                   <div
-                    className="text-[12px] font-semibold"
-                    style={{ fontFamily: 'var(--font-jetbrains), monospace', color: '#FFC857' }}
+                    className="text-[14px] font-semibold"
+                    style={{ color: '#FFC857' }}
                   >
                     {it.time}
                   </div>
                 )}
                 <div className="text-[15px] font-semibold mt-0.5 mb-0.5 text-ink">{it.title}</div>
                 {it.location && (
-                  <div className="flex items-center gap-1 text-[12.5px] text-mist">
+                  <div className="flex items-center gap-1 text-[14px] text-mist">
                     📍{' '}
                     <a
                       href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.location)}`}
@@ -130,20 +149,20 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
                   </div>
                 )}
                 {it.notes && (
-                  <div className="text-[12.5px] text-ink-soft mt-1.5 whitespace-pre-wrap">{it.notes}</div>
+                  <div className="text-[14px] text-ink-soft mt-1.5 whitespace-pre-wrap">{it.notes}</div>
                 )}
               </div>
+            </div>
             </div>
           ))}
         </div>
       ) : (
         <div
-          className="text-center py-9 px-4 text-[13.5px] text-mist rounded-[14px] border border-dashed"
+          className="text-center py-9 px-4 text-[14px] text-mist rounded-[14px] border border-dashed"
           style={{ borderColor: 'rgba(255,255,255,0.10)' }}
         >
           <span
             className="block text-[16px] text-ink-soft mb-1"
-            style={{ fontFamily: 'var(--font-fraunces), serif' }}
           >
             這天還沒有安排
           </span>
@@ -160,24 +179,23 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
             borderColor: 'rgba(255,200,87,0.35)',
           }}
         >
-          <div className="text-[11px] tracking-[0.08em] uppercase mb-1" style={{ color: '#FFC857' }}>
+          <div className="text-[14px] tracking-[0.08em] uppercase mb-1" style={{ color: '#FFC857' }}>
             {stay.icon} {stay.label}
           </div>
           <div
             className="text-[16px] font-[680] text-ink"
-            style={{ fontFamily: 'var(--font-fraunces), serif' }}
           >
             {stay.name}
           </div>
           {stay.notes && (
-            <div className="text-[12.5px] text-ink-soft mt-1 leading-relaxed">{stay.notes}</div>
+            <div className="text-[14px] text-ink-soft mt-1 leading-relaxed">{stay.notes}</div>
           )}
           {!stay.isTransport && (
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stay.name)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block mt-2 text-[12px] hover:underline"
+              className="inline-block mt-2 text-[14px] hover:underline"
               style={{ color: '#FFC857' }}
             >
               在地圖上查看 →

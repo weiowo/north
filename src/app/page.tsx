@@ -17,11 +17,11 @@ export default function Home() {
     <div className="flex flex-col min-h-screen lg:flex-row">
       <BottomNav active={activeTab} onChange={setActiveTab} />
 
-      <div className="flex flex-col flex-1 min-h-screen">
+      <div className="flex flex-col flex-1 min-w-0 lg:overflow-y-auto">
         <TopBar />
 
         <main
-          className="flex-1 px-4 pt-4 pb-24 lg:pb-16 lg:px-7 lg:pt-7 w-full max-w-[760px]"
+          className="flex-1 px-4 pt-4 pb-24 lg:pb-10 lg:px-10 lg:pt-8 w-full"
         >
           {activeTab === 'itinerary' && (
             <ItineraryTab activeDay={activeDay} onDayChange={setActiveDay} />

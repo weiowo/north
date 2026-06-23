@@ -9,7 +9,7 @@ export default function TopBar() {
 
   return (
     <header
-      className="relative px-[18px] pt-[22px] pb-4 overflow-hidden isolate"
+      className="relative px-[18px] pt-[22px] pb-4 overflow-hidden isolate lg:px-10 lg:pt-8 lg:pb-6"
       style={{ background: '#070B16' }}
     >
       {/* aurora orbs */}
@@ -63,8 +63,8 @@ export default function TopBar() {
             {TRIP.name}
           </h1>
           <div
-            className="text-[12px] tracking-[0.06em]"
-            style={{ fontFamily: 'var(--font-jetbrains), monospace', color: '#9FE8E2', opacity: 0.9 }}
+            className="text-[14px] tracking-[0.06em]"
+            style={{ color: '#9FE8E2', opacity: 0.9 }}
           >
             {dates}
           </div>
@@ -74,7 +74,6 @@ export default function TopBar() {
           <div
             className="text-[30px] font-[680] leading-none"
             style={{
-              fontFamily: 'var(--font-fraunces), serif',
               background: 'linear-gradient(90deg, #2DE2E6, #A06CFF)',
               WebkitBackgroundClip: 'text',
               backgroundClip: 'text',
@@ -84,7 +83,7 @@ export default function TopBar() {
           >
             {value}
           </div>
-          <div className="text-[10px] tracking-[0.12em] uppercase mt-0.5" style={{ color: '#8FA3BE' }}>
+          <div className="text-[14px] tracking-[0.12em] uppercase mt-0.5" style={{ color: '#8FA3BE' }}>
             {label}
           </div>
         </div>
@@ -95,7 +94,7 @@ export default function TopBar() {
         {TRIP.members.map((m) => (
           <span
             key={m}
-            className="text-[11px] px-2.5 py-1 rounded-full border"
+            className="text-[14px] px-2.5 py-1 rounded-full border"
             style={{
               background: 'rgba(45,226,230,0.08)',
               color: '#CFEFEF',

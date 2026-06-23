@@ -59,7 +59,7 @@ export default function ExpensesTab() {
                 borderColor: 'rgba(255,255,255,0.10)',
               }}
             >
-              <div className="text-[10px] tracking-[0.08em]" style={{ color: '#2DE2E6' }}>
+              <div className="text-[14px] tracking-[0.08em]" style={{ color: '#2DE2E6' }}>
                 {cur} 總計
               </div>
               <div
@@ -75,7 +75,7 @@ export default function ExpensesTab() {
 
       {/* list */}
       {loading ? (
-        <div className="text-center py-10 text-mist text-[13px]">載入中…</div>
+        <div className="text-center py-10 text-mist text-[14px]">載入中…</div>
       ) : expenses.length === 0 ? (
         <div
           className="text-center py-9 px-4 text-[13.5px] text-mist rounded-[14px] border border-dashed"
@@ -83,8 +83,7 @@ export default function ExpensesTab() {
         >
           <span
             className="block text-[16px] text-ink-soft mb-1"
-            style={{ fontFamily: 'var(--font-fraunces), serif' }}
-          >
+                     >
             還沒有花費記錄
           </span>
           按右下角 + 記一筆
@@ -102,7 +101,7 @@ export default function ExpensesTab() {
             >
               <div className="flex-1 min-w-0">
                 <div className="text-[14px] text-ink truncate">{e.desc}</div>
-                <div className="text-[11.5px] text-mist">
+                <div className="text-[14px] text-mist">
                   {e.payer && `${e.payer} 先付 · `}{e.day ? `Day ${e.day}` : ''}
                 </div>
               </div>

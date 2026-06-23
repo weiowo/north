@@ -8,6 +8,13 @@ export interface Expense {
   created_at: string
 }
 
+export type TransitMode = 'walk' | 'metro' | 'car' | 'bus' | 'taxi' | 'ferry' | 'train' | 'flight' | 'shuttle'
+
+export interface Transit {
+  mode: TransitMode
+  label: string
+}
+
 export interface ItineraryItem {
   id: string
   day: number
@@ -15,6 +22,7 @@ export interface ItineraryItem {
   title: string
   location: string
   notes: string
+  transit?: Transit
 }
 
 export interface StayInfo {

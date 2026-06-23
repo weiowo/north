@@ -42,7 +42,7 @@ export default function BottomNav({ active, onChange }: Props) {
             >
               {t.icon}
             </span>
-            <span className="text-[10.5px] tracking-[0.02em] lg:text-[14px]">{t.label}</span>
+            <span className="text-[14px] tracking-[0.02em]">{t.label}</span>
           </button>
         )
       })}
