@@ -9,32 +9,34 @@ export default function TopBar() {
 
   return (
     <header
-      className="relative px-[18px] pt-[22px] pb-4 overflow-hidden isolate lg:px-10 lg:pt-8 lg:pb-6"
+      className="relative px-[18px] pt-[22px] pb-4 isolate lg:px-10 lg:pt-8 lg:pb-6"
       style={{ background: '#070B16' }}
     >
-      {/* aurora orbs */}
-      <div
-        className="animate-drift-a absolute w-[280px] h-[280px] rounded-full pointer-events-none -z-10"
-        style={{
-          background: 'radial-gradient(circle, #2DE2E6, transparent 70%)',
-          filter: 'blur(60px)',
-          opacity: 0.5,
-          mixBlendMode: 'screen',
-          top: '-140px',
-          left: '-60px',
-        }}
-      />
-      <div
-        className="animate-drift-b absolute w-[280px] h-[280px] rounded-full pointer-events-none -z-10"
-        style={{
-          background: 'radial-gradient(circle, #A06CFF, transparent 70%)',
-          filter: 'blur(60px)',
-          opacity: 0.5,
-          mixBlendMode: 'screen',
-          top: '-120px',
-          right: '-80px',
-        }}
-      />
+      {/* aurora orbs — clipped so they don't bleed into other elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+        <div
+          className="animate-drift-a absolute w-[280px] h-[280px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, #2DE2E6, transparent 70%)',
+            filter: 'blur(60px)',
+            opacity: 0.5,
+            mixBlendMode: 'screen',
+            top: '-140px',
+            left: '-60px',
+          }}
+        />
+        <div
+          className="animate-drift-b absolute w-[280px] h-[280px] rounded-full"
+          style={{
+            background: 'radial-gradient(circle, #A06CFF, transparent 70%)',
+            filter: 'blur(60px)',
+            opacity: 0.5,
+            mixBlendMode: 'screen',
+            top: '-120px',
+            right: '-80px',
+          }}
+        />
+      </div>
 
       {/* skyline */}
       <svg
@@ -52,7 +54,7 @@ export default function TopBar() {
 
       {/* top row */}
       <div className="relative z-10 flex items-start justify-between gap-3">
-        <div>
+        <div className="min-w-0">
           <h1
             className="m-0 mb-1 text-[26px] font-[560] tracking-[0.2px]"
             style={{

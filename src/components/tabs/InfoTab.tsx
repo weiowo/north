@@ -6,7 +6,7 @@ const FLIGHTS = [
     from: 'TPE', fromCity: '桃園',
     to: 'PRG', toCity: '布拉格',
     code: 'CI67', time: '23:30 → 06:45+1',
-    duration: '13hr15min', baggage: '托運 30kg · 手提 7kg',
+    duration: '13hr15min', baggage: '托運 23kg × 2件 · 手提 7kg',
   },
   {
     day: 'D2', date: '10/2（五）',
@@ -48,7 +48,7 @@ const FLIGHTS = [
     from: 'LHR', fromCity: '倫敦',
     to: 'TPE', toCity: '桃園',
     code: 'CI82', time: '21:10 → 17:50+1',
-    duration: '13hr40min', baggage: '托運 30kg · 手提 7kg',
+    duration: '13hr40min', baggage: '托運 23kg × 2件 · 手提 7kg',
   },
 ]
 
@@ -84,7 +84,7 @@ export default function InfoTab() {
         <div
           className="grid gap-2 px-4 py-2.5 text-[14px] font-semibold"
           style={{
-            gridTemplateColumns: '90px minmax(180px, 1fr) 72px 110px',
+            gridTemplateColumns: '90px minmax(150px, 1fr) 72px 110px',
             minWidth: '500px',
             background: 'rgba(45,226,230,0.06)',
             borderBottom: '1px solid rgba(255,255,255,0.10)',

@@ -17,7 +17,7 @@ interface Props {
 export default function BottomNav({ active, onChange }: Props) {
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 flex z-20 border-t lg:static lg:flex-col lg:w-[200px] lg:h-screen lg:border-t-0 lg:border-r lg:pt-6 lg:pb-4 lg:px-2.5 lg:gap-1"
+      className="fixed bottom-0 left-0 right-0 flex z-20 border-t lg:static lg:flex-col lg:w-[200px] lg:h-full lg:border-t-0 lg:border-r lg:pt-6 lg:pb-4 lg:px-2.5 lg:gap-1"
       style={{
         background: '#0A1120',
         borderColor: 'rgba(255,255,255,0.10)',
