@@ -9,7 +9,7 @@ export default function TopBar() {
 
   return (
     <header
-      className="relative px-[18px] pt-[22px] pb-4 isolate lg:px-10 lg:pt-8 lg:pb-6"
+      className="relative px-[18px] pb-4 isolate lg:px-10 lg:pb-6 header-safe-top"
       style={{ background: '#070B16' }}
     >
       {/* aurora orbs — clipped so they don't bleed into other elements */}

@@ -46,6 +46,16 @@
   .animate-drift-b { animation: none; }
 }
 
+/* iOS PWA notch / Dynamic Island safe area */
+.header-safe-top {
+  padding-top: calc(env(safe-area-inset-top) + 22px);
+}
+@media (min-width: 1024px) {
+  .header-safe-top {
+    padding-top: 32px;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
