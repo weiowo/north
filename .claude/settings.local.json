@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/weiwei/Downloads/north-europe/nordic-app/src/components/tabs)",
+      "Bash(mkdir -p /Users/weiwei/Downloads/north-europe/nordic-app/src/lib)"
+    ]
+  }
+}
