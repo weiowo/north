@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-bg:          #070B16;
+  --color-bg-elev:     #101A2C;
+  --color-bg-elev-2:   #16223A;
+  --color-ink:         #EAF4FF;
+  --color-ink-soft:    #B7C7DE;
+  --color-mist:        #728099;
+  --color-line:        rgba(255, 255, 255, 0.10);
+  --color-neon-cyan:   #2DE2E6;
+  --color-neon-violet: #A06CFF;
+  --color-neon-pink:   #FF5DA2;
+  --color-neon-amber:  #FFC857;
+  --color-danger:      #FF6B6B;
+
+  --font-sans:  'Inter', system-ui, sans-serif;
+  --font-serif: 'Fraunces', serif;
+  --font-mono:  'JetBrains Mono', monospace;
+}
+
+@keyframes driftA {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(40px, 30px) scale(1.15); }
+}
+@keyframes driftB {
+  from { transform: translate(0, 0) scale(1.1); }
+  to   { transform: translate(-30px, 20px) scale(0.95); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-drift-a {
+  animation: driftA 16s ease-in-out infinite alternate;
+}
+.animate-drift-b {
+  animation: driftB 13s ease-in-out infinite alternate;
+}
+.animate-spin-slow {
+  animation: spin 0.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-drift-a,
+  .animate-drift-b { animation: none; }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #070B16;
+  color: #EAF4FF;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* day-scroll hide scrollbar */
+.day-scroll {
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.day-scroll::-webkit-scrollbar {
+  display: none;
+}
