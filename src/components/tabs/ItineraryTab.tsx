@@ -135,17 +135,35 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
                 )}
                 <div className="text-[15px] font-semibold mt-0.5 mb-0.5 text-ink">{it.title}</div>
                 {it.location && (
-                  <div className="flex items-center gap-1 text-[14px] text-mist">
+                  <div className="flex items-center gap-1 text-[14px] text-mist flex-wrap">
                     📍{' '}
-                    <a
-                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.location)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-dotted"
-                      style={{ color: '#2DE2E6', textDecorationColor: 'rgba(45,226,230,0.4)' }}
-                    >
-                      {it.location}
-                    </a>
+                    {Array.isArray(it.mapsUrl)
+                      ? it.location.split(' / ').map((part, i) => (
+                          <span key={i}>
+                            {i > 0 && <span className="text-mist"> / </span>}
+                            <a
+                              href={(it.mapsUrl as string[])[i] ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(part)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline decoration-dotted"
+                              style={{ color: '#2DE2E6', textDecorationColor: 'rgba(45,226,230,0.4)' }}
+                            >
+                              {part}
+                            </a>
+                          </span>
+                        ))
+                      : (
+                          <a
+                            href={it.mapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.location)}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-dotted"
+                            style={{ color: '#2DE2E6', textDecorationColor: 'rgba(45,226,230,0.4)' }}
+                          >
+                            {it.location}
+                          </a>
+                        )
+                    }
                   </div>
                 )}
                 {it.notes && (

@@ -23,6 +23,7 @@ export interface ItineraryItem {
   location: string
   notes: string
   transit?: Transit
+  mapsUrl?: string | string[]
 }
 
 export interface StayInfo {
