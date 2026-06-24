@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: '北歐冒險',
   },
   icons: {
-    apple: '/icons/icon-192.png',
+    apple: '/icons/apple-touch-icon.png',
   },
 }
 
