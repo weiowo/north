@@ -33,7 +33,7 @@ export default function BottomNav({ active, onChange }: Props) {
             className="flex-1 flex flex-col items-center gap-0.5 py-2.5 px-1 border-none cursor-pointer transition-colors lg:flex-row lg:justify-start lg:gap-2.5 lg:px-3 lg:py-2.5 lg:rounded-[10px] lg:flex-none"
             style={{
               background: isActive ? 'rgba(45,226,230,0.08)' : 'transparent',
-              color: isActive ? '#EAF4FF' : '#728099',
+              color: isActive ? '#EAF4FF' : '#8B9EB9',
             }}
           >
             <span

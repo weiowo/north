@@ -52,7 +52,7 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
             >
               <div
                 className="text-[14px] tracking-[0.08em] uppercase"
-                style={{ color: isActive ? '#2DE2E6' : '#728099' }}
+                style={{ color: isActive ? '#2DE2E6' : '#8B9EB9' }}
               >
                 {dayDate(day)}
               </div>
@@ -104,7 +104,19 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
               {it.transit && (
                 <div className="transit-indicator flex justify-center items-center gap-2 mb-2 -mt-1">
                   <span className="text-base leading-none">{TRANSIT_EMOJI[it.transit.mode]}</span>
-                  <span className="text-[14px]" style={{ color: '#8FA3BE' }}>{it.transit.label}</span>
+                  {it.transit.mapsUrl ? (
+                    <a
+                      href={it.transit.mapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[14px] underline decoration-dotted"
+                      style={{ color: '#A3B5CA', textDecorationColor: 'rgba(163,181,202,0.4)' }}
+                    >
+                      {it.transit.label}
+                    </a>
+                  ) : (
+                    <span className="text-[14px]" style={{ color: '#A3B5CA' }}>{it.transit.label}</span>
+                  )}
                 </div>
               )}
             <div className="relative mb-3.5">
@@ -135,36 +147,55 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
                 )}
                 <div className="text-[15px] font-semibold mt-0.5 mb-0.5 text-ink">{it.title}</div>
                 {it.location && (
-                  <div className="flex items-center gap-1 text-[14px] text-mist flex-wrap">
-                    📍{' '}
-                    {Array.isArray(it.mapsUrl)
-                      ? it.location.split(' / ').map((part, i) => (
-                          <span key={i}>
-                            {i > 0 && <span className="text-mist"> / </span>}
-                            <a
-                              href={(it.mapsUrl as string[])[i] ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(part)}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="underline decoration-dotted"
-                              style={{ color: '#2DE2E6', textDecorationColor: 'rgba(45,226,230,0.4)' }}
-                            >
-                              {part}
-                            </a>
-                          </span>
-                        ))
-                      : (
+                  Array.isArray(it.mapsUrl) && it.location.includes('\n') ? (
+                    <div className="text-[14px] text-mist mt-0.5">
+                      {it.location.split('\n').map((part, i) => (
+                        <div key={i} className="flex items-center gap-1 mt-0.5">
+                          📍{' '}
                           <a
-                            href={it.mapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.location)}`}
+                            href={(it.mapsUrl as string[])[i] ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(part)}`}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="underline decoration-dotted"
                             style={{ color: '#2DE2E6', textDecorationColor: 'rgba(45,226,230,0.4)' }}
                           >
-                            {it.location}
+                            {part}
                           </a>
-                        )
-                    }
-                  </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="flex items-center gap-1 text-[14px] text-mist flex-wrap">
+                      📍{' '}
+                      {Array.isArray(it.mapsUrl)
+                        ? it.location.split(' / ').map((part, i) => (
+                            <span key={i}>
+                              {i > 0 && <span className="text-mist"> / </span>}
+                              <a
+                                href={(it.mapsUrl as string[])[i] ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(part)}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="underline decoration-dotted"
+                                style={{ color: '#2DE2E6', textDecorationColor: 'rgba(45,226,230,0.4)' }}
+                              >
+                                {part}
+                              </a>
+                            </span>
+                          ))
+                        : (
+                            <a
+                              href={it.mapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(it.location)}`}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="underline decoration-dotted"
+                              style={{ color: '#2DE2E6', textDecorationColor: 'rgba(45,226,230,0.4)' }}
+                            >
+                              {it.location}
+                            </a>
+                          )
+                      }
+                    </div>
+                  )
                 )}
                 {it.notes && (
                   <div className="text-[14px] text-ink-soft mt-1.5 whitespace-pre-wrap">{it.notes}</div>
@@ -210,7 +241,7 @@ export default function ItineraryTab({ activeDay, onDayChange }: Props) {
           )}
           {!stay.isTransport && (
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stay.name)}`}
+              href={stay.mapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stay.name)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block mt-2 text-[14px] hover:underline"

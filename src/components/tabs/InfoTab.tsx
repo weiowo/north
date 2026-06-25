@@ -84,11 +84,11 @@ export default function InfoTab() {
         <div
           className="grid gap-2 px-4 py-2.5 text-[14px] font-semibold"
           style={{
-            gridTemplateColumns: '90px minmax(150px, 1fr) 72px 110px',
+            gridTemplateColumns: '90px 180px 72px 110px',
             minWidth: '500px',
             background: 'rgba(45,226,230,0.06)',
             borderBottom: '1px solid rgba(255,255,255,0.10)',
-            color: '#728099',
+            color: '#8B9EB9',
           }}
         >
           <span>日期</span>
@@ -105,27 +105,27 @@ export default function InfoTab() {
           >
             <div
               className="grid gap-2 items-center"
-              style={{ gridTemplateColumns: '90px minmax(180px, 1fr) 72px 110px' }}
+              style={{ gridTemplateColumns: '90px 180px 72px 110px' }}
             >
               <div>
                 <span className="font-semibold" style={{ color: '#2DE2E6' }}>{f.day}</span>
-                <span className="block text-[14px]" style={{ color: '#728099' }}>{f.date}</span>
+                <span className="block text-[14px]" style={{ color: '#8B9EB9' }}>{f.date}</span>
               </div>
               <div>
                 <span className="text-ink font-semibold">
                   {f.fromCity} → {f.toCity}
                 </span>
-                <span className="block text-[14px]" style={{ color: '#728099' }}>
+                <span className="block text-[14px]" style={{ color: '#8B9EB9' }}>
                   {f.from} → {f.to}
                 </span>
               </div>
-              <span style={{ color: '#B7C7DE' }}>{f.code}</span>
+              <span style={{ color: '#C5D3E6' }}>{f.code}</span>
               <div>
                 <span className="text-ink">{f.time}</span>
-                <span className="block text-[14px]" style={{ color: '#728099' }}>{f.duration}</span>
+                <span className="block text-[14px]" style={{ color: '#8B9EB9' }}>{f.duration}</span>
               </div>
             </div>
-            <div className="mt-1.5 text-[14px]" style={{ color: '#728099' }}>
+            <div className="mt-1.5 text-[14px]" style={{ color: '#8B9EB9' }}>
               🧳 {f.baggage}
             </div>
           </div>

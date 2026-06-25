@@ -13,6 +13,7 @@ export type TransitMode = 'walk' | 'metro' | 'car' | 'bus' | 'taxi' | 'ferry' | 
 export interface Transit {
   mode: TransitMode
   label: string
+  mapsUrl?: string
 }
 
 export interface ItineraryItem {
@@ -31,6 +32,7 @@ export interface StayInfo {
   label: string
   name: string
   notes: string
+  mapsUrl?: string
   isTransport?: boolean
 }
 

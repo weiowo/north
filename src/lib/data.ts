@@ -14,24 +14,27 @@ export const ITINERARY: ItineraryItem[] = [
   { id: 'd2-1', day: 2, time: '06:45', title: '抵達布拉格（轉機）', location: '布拉格機場 第一航廈', notes: '',  mapsUrl: '' },
   { id: 'd2-2', day: 2, time: '10:20', title: '布拉格飛哥本哈根', location: '布拉格機場 第二航廈', notes: 'SK768 · 10:20 PRG → 11:40 CPH · 約 1hr20min · 抵達哥本哈根第三航廈', transit: { mode: 'shuttle', label: '航廈接駁巴士 · 約 15 分鐘' },  mapsUrl: '' },
   { id: 'd2-3', day: 2, time: '11:40', title: '抵達哥本哈根', location: '哥本哈根機場 第三航廈', notes: '',  mapsUrl: '' },
-  { id: 'd2-4', day: 2, time: '13:00', title: '飯店寄放行李', location: 'Comfort Hotel Copenhagen Airport', notes: '含早餐 · 家庭房×1（一張雙人床+一個上下鋪）+ 標準雙床房*1', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' },  mapsUrl: '' },
-  { id: 'd2-5',  day: 2, time: '14:00', title: '搭地鐵 M2 前往市區', location: '哥本哈根機場地鐵站', notes: '', transit: { mode: 'walk', label: '步行 5 分鐘至地鐵 Københavns Lufthavn 站，搭 M2 往 Vanløse 方向 -> Kongens Nytorv 站轉乘 M4 往 Orientkaj St. 方向 -> Østerport 站下車' } },
-  { id: 'd2-10b', day: 2, time: '14:30', title: '小美人魚雕像', location: 'Langelinie, 2100 København Ø, Copenhagen', notes: '步行沿海濱散步 · 戶外 · 全天開放 · 免費', transit: { mode: 'metro', label: '地鐵 Østerport 站 · 步行約 15 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/V55qmDCvMx4xg6TY8' },
-  { id: 'd2-10', day: 2, time: '15:15', title: '阿馬林堡宮', location: 'Amalienborg Slotsplads, 1257 København K, Copenhagen', notes: '丹麥皇宮廣場 · 廣場全天免費', transit: { mode: 'walk', label: '步行 · 約 15 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Pc11q8MbhT6Hgtgc8' },
-  { id: 'd2-9b', day: 2, time: '15:45', title: '新港 Nyhavn', location: 'Nyhavn, Copenhagen', notes: '彩色排屋運河街 · 拍照打卡必去 · 全天開放 · 免費', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Ks3G5zkQ4CTYp4H4A' },
-  { id: 'd2-9',  day: 2, time: '16:15', title: '國王新廣場', location: 'Kongens Nytorv, 1050 København, Copenhagen', notes: '哥本哈根最大廣場 · 新港運河起點 · 戶外 · 全天開放 · 免費', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Rqjauc6GkhEPqV1t7' },
-  { id: 'd2-6',  day: 2, time: '16:30', title: 'Hart Bageri 丹麥麵包', location: 'Gammel Mønt 4, 1117 København, Copenhagen', notes: '必吃丹麥傳統麵包 · 推薦肉桂捲、可頌 · 週一至五 07:30–18:30', transit: { mode: 'walk', label: '步行 · 約 8 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/m9bz9ZF9qwGGKTzs7' },
-  { id: 'd2-7',  day: 2, time: '17:30', title: 'Strøget 斯楚格購物街', location: 'Strøget, Copenhagen', notes: '哥本哈根最長步行購物街，從市政廳廣場延伸至國王新廣場', transit: { mode: 'walk', label: '步行 · 約 3 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/JxvdhvkcZnMrscy4A' },
-  { id: 'd2-8b', day: 2, time: '18:00', title: 'DØP 丹麥熱狗 / Gasoline Grill 漢堡（晚餐可選）', location: 'Amagertorv 31, 1160 København / Niels Hemmingsens Gade 20A, 1153 København', notes: 'DØP 有機丹麥熱狗 · 每日 11:00–19:00｜Gasoline Grill 漢堡 · 11:00-20:00 售完為止', transit: { mode: 'walk', label: '步行 · 約 3 分鐘' }, mapsUrl: ['https://maps.app.goo.gl/xGHGKUBHhNvX2nf47', 'https://maps.app.goo.gl/DgaoRtwDxWMRZDPc6'] },
-  { id: 'd2-7b', day: 2, time: '19:00', title: 'Flying Tiger Copenhagen', location: 'Frederiksberggade 11B, 1459 København, Copenhagen', notes: 'Flying Tiger 發源於哥本哈根，斯楚格街上必逛 · 週一至六 10:00–19:00 · 週日 11:00–18:00', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Zd8pCi4p4nsyBbWB8' },
-  { id: 'd2-7c', day: 2, time: '19:30', title: '安徒生雕像 Hans Christian Andersen by Henry Luckow-Nielsen', location: 'Rådhuspladsen, 1553 København, Copenhagen', notes: 'H.C. 安徒生銅像 · 市政廳廣場旁 · Strøget 走到底即抵達 · 免費參觀', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/CcmdB6wqq6bzgXpHA' },
+  { id: 'd2-4', day: 2, time: '13:00–13:15（停留 15 分鐘）', title: '飯店寄放行李', location: 'Comfort Hotel Copenhagen Airport', notes: '含早餐 · 家庭房×1（一張雙人床+一個上下鋪）+ 標準雙床房*1', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' },  mapsUrl: '' },
+  { id: 'd2-10b', day: 2, time: '14:30–14:50（停留 20 分鐘）', title: '小美人魚雕像', location: 'Langelinie, 2100 København Ø, Copenhagen', notes: '步行沿海濱散步 · 戶外 · 全天開放 · 免費', transit: { mode: 'metro', label: 'M2 Lufthavn → Kongens Nytorv 轉 M4 → Østerport 站下車 · 步行約 15 分鐘', mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Østerport+Station,+Copenhagen' }, mapsUrl: 'https://maps.app.goo.gl/V55qmDCvMx4xg6TY8' },
+  { id: 'd2-10', day: 2, time: '15:05–15:25（停留 20 分鐘）', title: '阿馬林堡宮', location: 'Amalienborg Slotsplads, 1257 København K, Copenhagen', notes: '丹麥皇宮廣場 · 廣場全天免費', transit: { mode: 'walk', label: '步行 · 約 15 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Pc11q8MbhT6Hgtgc8' },
+  { id: 'd2-9b', day: 2, time: '15:30–16:00（停留 30 分鐘）', title: '新港 Nyhavn', location: 'Nyhavn, Copenhagen', notes: '彩色排屋運河街 · 拍照打卡必去 · 全天開放 · 免費', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Ks3G5zkQ4CTYp4H4A' },
+  { id: 'd2-9',  day: 2, time: '16:05–16:15（停留 10 分鐘）', title: '國王新廣場', location: 'Kongens Nytorv, 1050 København, Copenhagen', notes: '哥本哈根最大廣場 · 新港運河起點 · 戶外 · 全天開放 · 免費', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Rqjauc6GkhEPqV1t7' },
+  { id: 'd2-6',  day: 2, time: '16:25–16:55（停留 30 分鐘）', title: 'Hart Bageri 丹麥麵包', location: 'Gammel Mønt 4, 1117 København, Copenhagen', notes: '必吃丹麥傳統麵包 · 推薦肉桂捲、可頌 · 週一至五 07:30–18:30', transit: { mode: 'walk', label: '步行 · 約 8 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/m9bz9ZF9qwGGKTzs7' },
+  { id: 'd2-7',  day: 2, time: '17:00–18:00（停留 1 小時）', title: 'Strøget 斯楚格購物街', location: 'Strøget, Copenhagen', notes: '哥本哈根最長步行購物街，從市政廳廣場延伸至國王新廣場 · DØP 熱狗、Flying Tiger 也在此街上', transit: { mode: 'walk', label: '步行 · 約 3 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/JxvdhvkcZnMrscy4A' },
+  { id: 'd2-8b', day: 2, time: '18:05–18:35（停留 30 分鐘）', title: 'DØP 丹麥熱狗 / Gasoline Grill 漢堡（晚餐可選）', location: 'Amagertorv 31, 1160 København / Niels Hemmingsens Gade 20A, 1153 København', notes: 'DØP 有機丹麥熱狗 · 每日 11:00–19:00｜Gasoline Grill 漢堡 · 11:00-20:00 售完為止', transit: { mode: 'walk', label: '步行 · 約 3 分鐘' }, mapsUrl: ['https://maps.app.goo.gl/xGHGKUBHhNvX2nf47', 'https://maps.app.goo.gl/DgaoRtwDxWMRZDPc6'] },
+  { id: 'd2-7b', day: 2, time: '18:40–19:10（停留 30 分鐘）', title: 'Flying Tiger Copenhagen', location: 'Frederiksberggade 11B, 1459 København, Copenhagen', notes: 'Flying Tiger 發源於哥本哈根，斯楚格街上必逛 · 週一至六 10:00–19:00 · 週日 11:00–18:00', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/Zd8pCi4p4nsyBbWB8' },
+  { id: 'd2-7c', day: 2, time: '19:15–19:30（停留 15 分鐘）', title: '安徒生雕像 Hans Christian Andersen by Henry Luckow-Nielsen', location: 'Rådhuspladsen, 1553 København, Copenhagen', notes: 'H.C. 安徒生銅像 · 市政廳廣場旁 · Strøget 走到底即抵達 · 免費參觀', transit: { mode: 'walk', label: '步行 · 約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/CcmdB6wqq6bzgXpHA' },
 
   { id: 'd2-12', day: 2, time: '20:00', title: '返回飯店', location: 'Comfort Hotel Copenhagen Airport', notes: '', transit: { mode: 'metro', label: '步行 3 分鐘至 Radhuspladsen 站，搭 M3 往 Kongens Nytorv 方向 -> Kongens Nytorv 站轉乘 M2 往 Københavns Lufthavn 方向 -> Københavns Lufthavn 站下車· 約 30 分鐘' }, mapsUrl: '' },
 
   { id: 'd3-1', day: 3, time: '08:05', title: '哥本哈根飛奧斯陸', location: '哥本哈根機場 第三航廈', notes: 'SK1462 · 08:05 CPH → 09:15 OSL · 約 1hr10min' },
-  { id: 'd3-2', day: 3, time: '11:00', title: 'Avis 租車取車', location: '奧斯陸機場 Gardermoen', notes: 'Mercedes Vito 九人座，手排車 · 11:00 取車（10/6 22:00 卑爾根機場還車）' },
-  { id: 'd3-3', day: 3, time: '', title: '開車前往利勒哈默爾', location: '利勒哈默爾 Lillehammer', notes: '車程約 1hr40min' },
-  { id: 'd3-4', day: 3, time: '', title: '開車前往 Trolltun Hotel & Hytter', location: 'Trolltun Hotel & Hytter', notes: '車程約 2hr' },
+  { id: 'd3-15', day: 3, time: '09:15', title: '抵達奧斯陸機場', location: '奧斯陸機場 Gardermoen', notes: '', transit: { mode: 'flight', label: '1hr10min 航程' } },
+  { id: 'd3-2', day: 3, time: '11:00–11:20（停留 20 分鐘）', title: 'Avis 租車取車', location: '奧斯陸機場 Gardermoen', notes: 'Mercedes Vito 九人座，手排車 · 11:00 取車（10/6 22:00 卑爾根機場還車）' },
+  { id: 'd3-4', day: 3, time: '11:54–12:24（停留 30 分鐘）', title: '麵包店 - Espa Bolleland', location: 'Falletvegen 11, 2338 Espa', notes: '挪威公路傳奇休息站 · 24 小時營業 · 每年賣出 200 萬個 Espa Bolle 小圓麵包 · 必買！', transit: { mode: 'car', label: '車程約 34 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/m8ritJmW3cdELbM46' },
+  { id: 'd3-6', day: 3, time: '13:30–14:30（停留 1 小時）', title: '利勒哈默爾 Lillehammer', location: '奧林匹克公園跳台 Lysgårdsbakkene', notes: '1994 冬奧主辦城市 · 跳台夏季可搭纜椅至頂觀景 · 步行免費', transit: { mode: 'car', label: '車程約 1hr 6min' }, mapsUrl: 'https://maps.app.goo.gl/cPK2LQrs3zuHVsocA' },
+  { id: 'd3-7', day: 3, time: '15:20–15:50（停留 30 分鐘）', title: '木板教堂 - Ringebu Stave Church', location: 'Ringebu Stavkirke, Ringebu', notes: '建於 13 世紀 · 挪威最大木板教堂之一 · 10:00–17:00 · 門票 150 NOK（僅在外面參觀）', transit: { mode: 'car', label: '車程約 50 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/bFeUCrGkEEEZmQY5' },
+  { id: 'd3-8', day: 3, time: '17:10–17:50（停留 40 分鐘）', title: '度母奧斯 Dombås', location: '度母奧斯小鎮\nDombås Senter（超市採買）', notes: '挪威山區小鎮 · 超市採買 + 晚餐', transit: { mode: 'car', label: '車程約 1hr 20min' }, mapsUrl: ['https://maps.app.goo.gl/34UEiSByGmk9T6QY9', 'https://maps.app.goo.gl/xZUokdzpg45489QC7'] },
+  { id: 'd3-9', day: 3, time: '17:55', title: '抵達 Trolltun Gjestegård', location: 'Trolltun Gjestegård, Dombås', notes: '', transit: { mode: 'car', label: '車程約 5 分鐘' }, mapsUrl: 'https://maps.app.goo.gl/wz7Jaf1CCAdi34LVA' },
 
   { id: 'd4-1', day: 4, time: '', title: '從 Trolltun 出發', location: 'Trolltun Hotel & Hytter', notes: '車程約 2hr27min' },
   { id: 'd4-2', day: 4, time: '', title: '精靈之路 Trollstigen', location: 'Trollstigen', notes: '車程約 1hr14min' },
@@ -67,7 +70,7 @@ export const ITINERARY: ItineraryItem[] = [
 
 export const STAYS: Record<number, StayInfo> = {
   2:  { icon: '🏨', label: '今晚住宿', name: 'Comfort Hotel Copenhagen Airport', notes: '含早餐 · 家庭房×1（一張雙人床+一個上下鋪）+ 標準雙床房*1' },
-  3:  { icon: '🏨', label: '今晚住宿', name: 'Trolltun Hotel & Hytter', notes: '有廚房 · 一臥室公寓×2（每間一張雙人床+一個上下鋪）' },
+  3:  { icon: '🏨', label: '今晚住宿', name: 'Trolltun Gjestegård', notes: '有廚房 · 一臥室公寓×2（每間一張雙人床+一個上下鋪）', mapsUrl: 'https://maps.app.goo.gl/wz7Jaf1CCAdi34LVA' },
   4:  { icon: '🏨', label: '今晚住宿', name: 'Dalen Apartments', notes: '有廚房 · 雙臥室公寓×1（一張雙人床+兩張單人床+一張沙發床）' },
   5:  { icon: '🏨', label: '今晚住宿', name: 'Wangen Apartments', notes: '有廚房 · 雙臥室公寓×1（兩張雙人床+一張沙發床）' },
   6:  { icon: '🏨', label: '今晚住宿', name: 'Comfort Hotel Bergen Airport', notes: '含早餐 · 標準雙床房×3' },
@@ -79,7 +82,7 @@ export const STAYS: Record<number, StayInfo> = {
 }
 
 export const DRIVE_SUMMARY: Record<number, string> = {
-  3: '3hr40min',
+  3: '3hr50min',
   4: '3hr45min',
   5: '4hr30min',
 }

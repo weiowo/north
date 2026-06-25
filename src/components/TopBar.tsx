@@ -85,7 +85,7 @@ export default function TopBar() {
           >
             {value}
           </div>
-          <div className="text-[14px] tracking-[0.12em] uppercase mt-0.5" style={{ color: '#8FA3BE' }}>
+          <div className="text-[14px] tracking-[0.12em] uppercase mt-0.5" style={{ color: '#A3B5CA' }}>
             {label}
           </div>
         </div>

@@ -2,7 +2,17 @@
   "permissions": {
     "allow": [
       "Bash(mkdir -p /Users/weiwei/Downloads/north-europe/nordic-app/src/components/tabs)",
-      "Bash(mkdir -p /Users/weiwei/Downloads/north-europe/nordic-app/src/lib)"
+      "Bash(mkdir -p /Users/weiwei/Downloads/north-europe/nordic-app/src/lib)",
+      "WebFetch(domain:maps.app.goo.gl)",
+      "WebFetch(domain:www.google.com)",
+      "WebFetch(domain:www.visitnorway.com)",
+      "WebFetch(domain:www.mjostaarnet.no)",
+      "WebFetch(domain:www.espasenter.no)",
+      "WebSearch",
+      "Bash(npx tsc *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }
